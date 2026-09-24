@@ -1,23 +1,33 @@
 import { motion } from 'framer-motion'
 import {
-  Mail, Github, Send, MessageCircle, ArrowUpRight, AtSign
+  Mail, Github, Send, MessageCircle, ArrowUpRight, Linkedin
 } from 'lucide-react'
 import { useScrollReveal, fadeUp, staggerContainer, scaleIn } from '../hooks/useScrollReveal'
 
 const contactLinks = [
   {
     icon: Mail,
-    label: 'Email',
+    label: 'Email Pribadi',
+    value: 'kamalilham214@gmail.com',
+    href: 'mailto:kamalilham214@gmail.com',
+  },
+  {
+    icon: Mail,
+    label: 'Email Kampus',
     value: '2411102441015@umkt.ac.id',
     href: 'mailto:2411102441015@umkt.ac.id',
-    description: 'Untuk keperluan profesional dan akademik',
+  },
+  {
+    icon: Linkedin,
+    label: 'LinkedIn',
+    value: 'linkedin.com/in/kamal-ilham',
+    href: 'https://www.linkedin.com/in/kamal-ilham',
   },
   {
     icon: Github,
     label: 'GitHub',
     value: 'github.com/KAMAL-ILHAM',
     href: 'https://github.com/KAMAL-ILHAM',
-    description: 'Lihat kode dan repositori proyek saya',
   },
 ]
 
@@ -46,8 +56,7 @@ export default function Contact() {
             Mari Berkolaborasi
           </motion.h2>
           <motion.p variants={fadeUp} className="body-text mb-14 max-w-lg">
-            Terbuka untuk peluang magang, proyek lepas, dan kolaborasi. 
-            Kirimkan pesan — saya akan membalas dalam waktu 24 jam.
+            Terbuka untuk peluang magang, proyek, dan kolaborasi di bidang teknologi.
           </motion.p>
 
           <div className="grid lg:grid-cols-2 gap-10 items-start">
@@ -59,12 +68,12 @@ export default function Contact() {
                 </div>
                 <h3 className="heading-md mb-3">Kirim Pesan</h3>
                 <p className="text-sm text-muted leading-relaxed mb-8">
-                  Baik Anda memiliki ide proyek, butuh kolaborator, atau sekadar ingin mengobrol tentang teknologi — saya selalu senang terhubung.
+                  Silakan hubungi saya melalui email atau LinkedIn untuk peluang dan kolaborasi.
                 </p>
 
                 <div className="flex flex-col gap-3">
                   <motion.a
-                    href="mailto:2411102441015@umkt.ac.id"
+                    href="mailto:kamalilham214@gmail.com"
                     className="btn-primary justify-center"
                     whileHover={{ scale: 1.02, y: -2 }}
                     whileTap={{ scale: 0.97 }}
@@ -81,7 +90,6 @@ export default function Contact() {
                     <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500" />
                   </div>
                   <p className="text-xs text-muted">
-                    <span className="font-medium text-ink-soft"></span>
                   </p>
                 </div>
               </div>
@@ -117,25 +125,10 @@ export default function Contact() {
                         {link.label}
                       </p>
                       <p className="text-sm font-medium text-ink-soft truncate">{link.value}</p>
-                      <p className="text-[11px] text-muted">{link.description}</p>
                     </div>
                     <ArrowUpRight size={14} className="text-muted opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
                   </motion.a>
                 ))}
-
-                {/* Handle badge */}
-                <motion.div
-                  variants={scaleIn}
-                  className="rounded-2xl border border-dashed border-black/12 p-4 flex items-center gap-3"
-                >
-                  <div className="w-8 h-8 rounded-xl bg-black/5 flex items-center justify-center">
-                    <AtSign size={14} className="text-muted" />
-                  </div>
-                  <div>
-                    <p className="text-xs font-medium text-ink-soft">Username</p>
-                    <p className="text-[11px] text-muted">@KAMAL-ILHAM di berbagai platform</p>
-                  </div>
-                </motion.div>
               </motion.div>
             </div>
           </div>

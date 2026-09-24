@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { User, GraduationCap, MapPin, Code2 } from 'lucide-react'
+import { User, GraduationCap, MapPin, Code2, Database, Brain } from 'lucide-react'
 import { useScrollReveal, fadeUp, staggerContainer, slideRight } from '../hooks/useScrollReveal'
 
 export default function About() {
@@ -18,7 +18,7 @@ export default function About() {
           <motion.div variants={fadeUp} className="flex items-center gap-3 mb-12">
             <span className="section-label">
               <User size={12} strokeWidth={2.5} />
-              Tentang
+              Tentang Saya
             </span>
             <div className="h-px flex-1 bg-gradient-to-r from-black/8 to-transparent max-w-xs" />
           </motion.div>
@@ -27,26 +27,24 @@ export default function About() {
             {/* Text side */}
             <div>
               <motion.h2 variants={fadeUp} className="heading-lg mb-6">
-                Menciptakan solusi untuk
+                Membangun aplikasi dan
                 <br />
-                <em className="not-italic text-gradient">web terbuka.</em>
+                <em className="not-italic text-gradient">mempelajari teknologi.</em>
               </motion.h2>
 
               <motion.p variants={fadeUp} className="body-text text-[15px] mb-5">
-                Saya adalah mahasiswa Teknik Informatika tahun ketiga di Universitas Muhammadiyah Kalimantan Timur, 
-                yang berfokus pada perancangan aplikasi web siap-produksi dengan arsitektur yang rapi dan desain yang matang.
+                Saya mahasiswa Teknik Informatika Universitas Muhammadiyah Kalimantan Timur dengan peminatan Komputasi Cerdas. Saya mengembangkan berbagai proyek aplikasi sebagai bagian dari perkuliahan maupun proyek personal.
               </motion.p>
 
               <motion.p variants={fadeUp} className="body-text text-[15px] mb-8">
-                Pendekatan saya memadukan fundamental yang kuat dalam algoritma dan struktur data dengan 
-                pengembangan full-stack modern — membangun antarmuka yang nyaman digunakan serta API yang mudah dikelola.
+                Minat saya mencakup rekayasa perangkat lunak, kecerdasan buatan, dan pengolahan informasi. Melalui berbagai proyek, saya mempelajari proses pengembangan dari perancangan aplikasi hingga implementasi sistem cerdas.
               </motion.p>
 
               <motion.div variants={fadeUp} className="flex flex-col gap-3">
                 {[
                   { icon: GraduationCap, text: 'Teknik Informatika, UMKT — Samarinda' },
-                  { icon: MapPin, text: 'Kalimantan Timur, Indonesia' },
-                  { icon: Code2, text: 'Mengutamakan Frontend, terampil di Full-Stack' },
+                  { icon: MapPin, text: 'Samarinda, Kalimantan Timur' },
+                  { icon: Code2, text: 'Pengembangan Web, Mobile & AI' },
                 ].map(({ icon: Icon, text }) => (
                   <div key={text} className="flex items-center gap-3">
                     <div className="skill-icon-ring w-8 h-8 flex-shrink-0">
@@ -63,18 +61,18 @@ export default function About() {
               {[
                 {
                   icon: Code2,
-                  title: 'Fokus Frontend',
-                  desc: 'UI yang presisi (pixel-perfect) dengan React, TypeScript, dan CSS modern — performa dan aksesibilitas dibangun sejak awal.',
+                  title: 'Pengembangan Aplikasi',
+                  desc: 'Membangun aplikasi web dan perangkat bergerak (mobile) dengan memperhatikan struktur arsitektur, tampilan, dan kemudahan penggunaan.',
                 },
                 {
-                  icon: GraduationCap,
-                  title: 'Backend & API',
-                  desc: 'Layanan RESTful dengan Node.js dan Express, didukung oleh PostgreSQL atau MySQL — skema database rapi, autentikasi tepat, dan penanganan error yang solid.',
+                  icon: Database,
+                  title: 'Struktur Data & Backend',
+                  desc: 'Menerapkan algoritma yang efisien dan mengelola basis data untuk memastikan bagian backend aplikasi berjalan dengan optimal.',
                 },
                 {
-                  icon: User,
-                  title: 'Pemahaman Sistem',
-                  desc: 'Docker untuk container, Git untuk kontrol versi, dan selalu memikirkan bagaimana setiap komponen bekerja sama dalam skala besar.',
+                  icon: Brain,
+                  title: 'Komputasi Cerdas',
+                  desc: 'Menerapkan kecerdasan buatan dalam beberapa proyek dan mempelajari penggunaannya untuk mendukung fitur dalam aplikasi.',
                 },
               ].map((card) => (
                 <motion.div

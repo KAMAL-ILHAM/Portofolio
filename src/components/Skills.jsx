@@ -3,52 +3,62 @@ import {
   Layers, Server, Database, Wrench,
   Globe, Zap, Coffee, Box, GitBranch,
   Container, Monitor, Cpu, Wind, FileCode,
-  Terminal, TextCursor
+  Terminal, TextCursor, Brain, Smartphone, 
+  Network, Scan, Braces, Cloud, Code2, 
+  Figma, Palette, Github, Table, FileText, Presentation
 } from 'lucide-react'
 import { useScrollReveal, fadeUp, staggerContainer, scaleIn } from '../hooks/useScrollReveal'
 
-// Persentase (level) sudah dihapus dari data
 const skillGroups = [
   {
-    category: 'Frontend',
-    icon: Globe,
+    category: 'Development',
+    icon: Code2,
     skills: [
       { name: 'React', icon: Zap },
       { name: 'HTML5', icon: FileCode },
       { name: 'CSS3', icon: Wind },
       { name: 'JavaScript', icon: Coffee },
-    ],
-  },
-  {
-    category: 'Backend',
-    icon: Server,
-    skills: [
+      { name: 'Python', icon: Terminal },
+      { name: 'Django', icon: Layers },
       { name: 'Node.js', icon: Box },
       { name: 'Express', icon: Server },
-      { name: 'Python', icon: Terminal },
-      { name: 'Django', icon: Box },
-      { name: 'REST API', icon: Layers },
+      { name: 'REST API', icon: Network },
     ],
   },
   {
-    category: 'Database',
-    icon: Database,
+    category: 'AI & Data',
+    icon: Brain,
     skills: [
-      { name: 'PostgreSQL', icon: Database },
+      { name: 'Groq API', icon: Cpu },
+      { name: 'Tesseract OCR', icon: Scan },
+      { name: 'Regular Expression', icon: Braces },
       { name: 'MySQL', icon: Database },
-      { name: 'NeonDB', icon: Database },
-      { name: 'Prisma ORM', icon: Layers },
+      { name: 'Firebase', icon: Cloud },
     ],
   },
   {
-    category: 'Alat & Tools',
+    category: 'Mobile & Design',
+    icon: Smartphone,
+    skills: [
+      { name: 'Kotlin', icon: Code2 },
+      { name: 'Android Studio', icon: Smartphone },
+      { name: 'Figma', icon: Figma },
+      { name: 'Canva', icon: Palette },
+    ],
+  },
+  {
+    category: 'Tools',
     icon: Wrench,
     skills: [
-      { name: 'Git & GitHub', icon: GitBranch },
-      { name: 'Docker', icon: Container },
-      { name: 'Cursor', icon: TextCursor },
+      { name: 'Git', icon: GitBranch },
+      { name: 'GitHub', icon: Github },
       { name: 'VS Code', icon: Monitor },
-      { name: 'Vite', icon: Cpu },
+      { name: 'Cursor', icon: TextCursor },
+      { name: 'Vite', icon: Zap },
+      { name: 'Docker', icon: Container },
+      { name: 'Microsoft Excel', icon: Table },
+      { name: 'Microsoft Word', icon: FileText },
+      { name: 'Microsoft PowerPoint', icon: Presentation },
     ],
   },
 ]
@@ -78,13 +88,13 @@ export default function Skills() {
             Stack Teknologi
           </motion.h2>
           <motion.p variants={fadeUp} className="body-text mb-14 max-w-lg">
-            Alat dan teknologi yang saya gunakan sehari-hari untuk membangun aplikasi yang tangguh dan terukur.
+          Teknologi dan tools yang saya pelajari dan gunakan dalam berbagai proyek.
           </motion.p>
 
-          {/* Grid */}
+          {/* Grid dengan tambahan items-start */}
           <motion.div
             variants={staggerContainer(0.08)}
-            className="grid sm:grid-cols-2 xl:grid-cols-4 gap-5"
+            className="grid sm:grid-cols-2 xl:grid-cols-4 gap-5 items-start"
           >
             {skillGroups.map((group) => (
               <motion.div
@@ -103,7 +113,7 @@ export default function Skills() {
                   </span>
                 </div>
 
-                {/* Skills list (Tampilan baru tanpa persentase) */}
+                {/* Skills list */}
                 <ul className="flex flex-col gap-2">
                   {group.skills.map((skill) => (
                     <li 

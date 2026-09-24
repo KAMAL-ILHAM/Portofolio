@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { User, Github, Mail, Heart } from 'lucide-react'
+import { User, Github, Mail, Heart, Linkedin } from 'lucide-react'
 
 export default function Footer() {
   const year = new Date().getFullYear()
@@ -25,11 +25,13 @@ export default function Footer() {
               <p className="text-[11px] text-muted">Teknik Informatika · UMKT</p>
             </div>
           </div>
+
           {/* Social links */}
           <div className="flex items-center gap-2">
             {[
               { icon: Github, href: 'https://github.com/KAMAL-ILHAM', label: 'GitHub' },
-              { icon: Mail, href: 'mailto:2411102441015@umkt.ac.id', label: 'Email' },
+              { icon: Linkedin, href: 'https://www.linkedin.com/in/kamal-ilham', label: 'LinkedIn' },
+              { icon: Mail, href: 'mailto:kamalilham214@gmail.com', label: 'Email' },
             ].map(({ icon: Icon, href, label }) => (
               <motion.a
                 key={label}

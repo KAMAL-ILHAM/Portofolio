@@ -64,7 +64,7 @@ export default function Navbar() {
               <div className="skill-icon-ring w-8 h-8 group-hover:shadow-md transition-shadow">
                 <User size={14} strokeWidth={2.5} className="text-ink" />
               </div>
-              <span className="text-sm font-bold text-ink tracking-tight">Kamal</span>
+              <span className="text-sm font-bold text-ink tracking-tight">Ilham</span>
             </motion.a>
 
             {/* Desktop links */}

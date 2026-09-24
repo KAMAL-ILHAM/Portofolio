@@ -1,33 +1,9 @@
 import { useEffect, useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { ArrowDown, Github, Mail, Sparkles } from 'lucide-react' 
-
-// Disinkronkan dengan preferensi identitas dan role IT
-const words = ['Developer', 'Engineer', 'Programmer', 'Kreator'] 
+import { ArrowDown, Github, Mail, Linkedin } from 'lucide-react' 
 
 export default function Hero() {
   const containerRef = useRef(null)
-  const wordRef = useRef(null)
-  const wordIndex = useRef(0)
-
-  useEffect(() => {
-    const el = wordRef.current
-    if (!el) return
-
-    const cycle = () => {
-      el.style.opacity = '0'
-      el.style.transform = 'translateY(12px)'
-      setTimeout(() => {
-        wordIndex.current = (wordIndex.current + 1) % words.length
-        el.textContent = words[wordIndex.current]
-        el.style.opacity = '1'
-        el.style.transform = 'translateY(0)'
-      }, 300)
-    }
-
-    const interval = setInterval(cycle, 2800)
-    return () => clearInterval(interval)
-  }, [])
 
   const scrollToAbout = () => {
     document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' })
@@ -84,36 +60,16 @@ export default function Hero() {
           >
             Kamal Ilham
           </motion.h1>
-
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.45 }}
-            className="flex items-center justify-center gap-3 text-3xl sm:text-4xl lg:text-5xl font-bold text-muted"
-          >
-            <span>Full-Stack</span>
-            <span
-              ref={wordRef}
-              className="text-ink"
-              style={{
-                transition: 'opacity 0.3s ease, transform 0.3s ease',
-                display: 'inline-block',
-              }}
-            >
-              {words[0]}
-            </span>
-          </motion.div>
         </div>
 
-        {/* Tagline */}
+        {/* Tagline disesuaikan dengan gambar */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.55 }}
           className="text-center body-text max-w-xl mx-auto text-lg mb-8"
         >
-          Merancang pengalaman web yang rapi dan optimal dari
-          <em className="not-italic font-medium text-ink-soft"> Samarinda</em> — mengubah masalah kompleks menjadi antarmuka yang elegan.
+          Mengembangkan aplikasi web dan sistem digital melalui berbagai proyek akademik dan personal.
         </motion.p>
 
         {/* CTAs */}
@@ -150,7 +106,8 @@ export default function Hero() {
         >
           {[
             { icon: Github, label: 'GitHub', href: 'https://github.com/KAMAL-ILHAM' },
-            { icon: Mail, label: 'Email', href: 'mailto:2411102441015@umkt.ac.id' },
+            { icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/kamal-ilham' },
+            { icon: Mail, label: 'Email', href: 'mailto:kamalilham214@gmail.com' },
           ].map(({ icon: Icon, label, href }) => (
             <motion.a
               key={label}
@@ -175,10 +132,14 @@ export default function Hero() {
           className="glass-card rounded-3xl p-6 sm:p-8 max-w-3xl mx-auto"
         >
           <div className="grid sm:grid-cols-3 gap-6">
-            {[
-              { value: '2', label: 'Tahun Belajar', sub: 'React, Node, Python' },
-              { value: '4+', label: 'Proyek Utama', sub: 'Dari ide hingga deploy' },
-              { value: '1', label: 'Organisasi', sub: 'Staf Media Kreatif HIMATIKA' },
+          {[
+              { value: '2+', label: 'Tahun Kuliah', sub: 'Teknik Informatika' },
+              { value: '4+', label: 'Proyek', sub: 'Web, Mobile, dan AI' },
+              { 
+                value: '1', 
+                label: 'Organisasi', 
+                sub: <>Sekretaris Departemen <br /> Media Kreatif HIMATIKA</> 
+              },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
                 <div className="text-3xl sm:text-4xl font-black text-ink mb-1">{stat.value}</div>
