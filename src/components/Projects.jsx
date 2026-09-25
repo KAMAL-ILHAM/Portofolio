@@ -95,7 +95,7 @@ const projects = [
   },
   {
     title: 'QR AI Healthcare System',
-    description: 'Sistem berbasis QR Code yang terintegrasi dengan platform kesehatan AI untuk mempercepat akses data dan informasi pasien melalui pemindaian kode QR. Menggabungkan teknologi identifikasi cepat dengan analitik berbasis AI.',
+    description: 'Sistem berbasis web yang dilengkapi QR Code sebagai media akses aplikasi saat demonstrasi.',
     tech: [
       { name: 'Next.js / TS', icon: Zap },
       { name: 'Redis', icon: Database },
