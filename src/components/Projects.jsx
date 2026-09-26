@@ -112,7 +112,7 @@ const projects = [
   },
   {
     title: 'DOCMAN (Document Management System)',
-    description: 'Sistem otomasi ekstraksi agenda dari surat dinas berformat PDF menggunakan Tesseract OCR dan Regex. Mengatasi pencatatan manual dengan mengubah teks surat menjadi data agenda terstruktur (perihal, waktu, lokasi) yang terintegrasi langsung ke dalam kalender sistem.',
+    description: 'Sistem otomasi ekstraksi agenda dari surat dinas berformat PDF menggunakan Tesseract OCR dan Regex. Mengatasi pencatatan manual dengan mengubah teks surat menjadi data agenda terstruktur (perihal, waktu, lokasi) yang dapat dipantau langsung melalui antarmuka kalender.',
     tech: [
       { name: 'Django / Python', icon: FileCode }, 
       { name: 'HTML/JS/CSS', icon: Globe },
